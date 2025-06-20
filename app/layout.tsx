@@ -5,6 +5,7 @@ import "./globals.css"
 import { Toaster } from "@/components/ui/toaster"
 import { ThemeProvider } from "@/contexts/theme-context"
 import { AuthProvider } from "@/contexts/auth-context"
+import { AmplifyProvider } from "@/components/amplify-provider"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -22,12 +23,14 @@ export default function RootLayout({
   return (
     <html lang="it">
       <body className={inter.className}>
-        <ThemeProvider>
-          <AuthProvider>
-            {children}
-            <Toaster />
-          </AuthProvider>
-        </ThemeProvider>
+        <AmplifyProvider>
+          <ThemeProvider>
+            <AuthProvider>
+              {children}
+              <Toaster />
+            </AuthProvider>
+          </ThemeProvider>
+        </AmplifyProvider>
       </body>
     </html>
   )
