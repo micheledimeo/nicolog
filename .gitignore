@@ -16,6 +16,12 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
+# package managers
+pnpm-lock.yaml
+yarn.lock
+.pnpmfile.cjs
+pnpm-workspace.yaml
+
 # env files
 .env*
 
